@@ -6,14 +6,14 @@ int i = 1;
 
 void setup() {
   pinMode(LED, OUTPUT);
-  set_period(1000);
+  set_period(100);
 }
 
 void loop() {
   digitalWrite(LED, 1);
-  delayMicroseconds(d*10000/p);
+  delayMicroseconds(d*1000000/p);
   digitalWrite(LED, 0);
-  delayMicroseconds((100-d)*10000/p);
+  delayMicroseconds((100-d)*1000000/p);
   if (d<=0 || d >= 100){
     i = -i;
   }
@@ -25,5 +25,5 @@ void set_duty(int duty) {
 }
 
 void set_period(int period) {
-  p = period/100;
+  p = period;
 }
